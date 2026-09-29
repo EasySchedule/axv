@@ -47,6 +47,10 @@ HISTORY = DATA / "history"
 MIN_POSTS = 5
 MIN_CONSECUTIVE_WEEKS = 2
 WINDOW = "24h"
+# Unsuffixed in the schema. Every other numeric column carries its window suffix; this
+# one is a verdict, not a measurement, and it is a verdict on the whole arm. Do not
+# "fix" it to add a suffix without also fixing scoreboard.py, which writes it.
+VS_COLUMN = "vs_company_median"
 
 
 def read_csv(path: Path) -> list[dict]:
@@ -71,7 +75,11 @@ def weeks_below(name: str, key: str) -> list[str]:
     for snapshot in sorted(HISTORY.glob(f"{key}-{name}-*.csv")):
         rows = {row.get(key): row for row in read_csv(snapshot)}
         row = rows.get(name)
-        if row and row.get(f"vs_company_median_{WINDOW}") == "below":
+        # The column is unsuffixed. It was suffixed here once and the gate silently
+        # read an empty string for every arm, which meant no format could ever be
+        # flagged below the median and the gate was dead code that still printed
+        # confident verdicts. selftest.py now asserts the column name.
+        if row and row.get(VS_COLUMN) == "below":
             hits.append(snapshot.stem.rsplit("-", 1)[-1])
     return hits
 
@@ -83,7 +91,7 @@ def evaluate(path: Path, key: str) -> list[dict]:
         name = row.get(key, "")
         posts = int(row.get("posts_shipped") or 0)
         impressions = int(row.get(f"total_impressions_{WINDOW}") or 0)
-        below = row.get(f"vs_company_median_{WINDOW}") == "below"
+        below = row.get(VS_COLUMN) == "below"
         weeks = weeks_below(name, key)
 
         blockers = []

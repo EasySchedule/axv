@@ -44,15 +44,23 @@ echo "=== 4/6  scoreboards ================================================="
 python scripts/scoreboard.py $WRITE
 
 echo
-echo "=== 5/6  target model (Ember) ========================================="
-python scripts/target_model.py
-
-echo
-echo "=== 6/6  kill gate ===================================================="
+echo "=== 5/7  kill gate ===================================================="
 python scripts/kill_gate.py $WRITE
 
 echo
-echo "Next: regenerate the board so the verdict leads it."
-echo "  python scripts/board.py --out reports/board.md"
-echo "Then write the readout. Lead with the velocity chain, name the worst number"
+echo "=== 6/7  target model (Ember) ========================================="
+python scripts/target_model.py
+
+echo
+echo "=== 7/7  contract test on the verdict =================================="
+# The target model drives three months of allocation off five unmeasured priors. This
+# re-checks that the verdict is a property of the model and not of one arbitrary number.
+python scripts/contract.py
+
+echo
+echo "=== board ============================================================="
+python scripts/board.py --out reports/board.md
+
+echo
+echo "Next: write the readout. Lead with the velocity chain, name the worst number"
 echo "in it, and say what caused it. No manufactured optimism."

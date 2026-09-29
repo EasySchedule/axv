@@ -92,7 +92,7 @@ def group_table(rows: list[dict], key: str) -> str:
             fmt(r.get(f"max_impressions_{WINDOW}")),
             pct(r.get(f"median_engagement_rate_{WINDOW}"), 2),
             pct(r.get(f"median_follower_conversion_{WINDOW}"), 4),
-            r.get(f"vs_company_median_{WINDOW}") or "-",
+            r.get("vs_company_median") or "-",
             (r.get("kill_eligible") or "-").replace("|", "/"),
         ])
     return table(headers, body)
