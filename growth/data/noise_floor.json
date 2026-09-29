@@ -1,0 +1,156 @@
+{
+  "computed_at_utc": "2026-09-29T03:11:00Z",
+  "state": "baseline_zero",
+  "mature_posts": 0,
+  "observed_conversion_rate": null,
+  "overdispersion_alpha": 0.0,
+  "overdispersion_estimated": false,
+  "overdispersion_provenance": "NOT YET ESTIMABLE: 0 mature posts, need 12. Reported floors are therefore optimistic lower bounds.",
+  "sample_size_multiplier": 1.0,
+  "reference_median_impressions": 5000,
+  "alpha": 0.05,
+  "power": 0.8,
+  "test": "two-proportion comparison of follower conversion per impression, per format arm",
+  "kill_floor_impressions_per_arm_2x": 47057,
+  "table": [
+    {
+      "assumed_baseline_conversion": 0.0002,
+      "by_ratio": {
+        "1.5": {
+          "impressions_per_arm_binomial": 392345,
+          "impressions_per_arm_adjusted": 392345,
+          "posts_per_arm_at_5000_median_impressions": 79,
+          "min_detectable_ratio_at_10000_impressions": 6.38,
+          "min_detectable_ratio_at_50000_impressions": 2.7
+        },
+        "2.0": {
+          "impressions_per_arm_binomial": 117697,
+          "impressions_per_arm_adjusted": 117697,
+          "posts_per_arm_at_5000_median_impressions": 24,
+          "min_detectable_ratio_at_10000_impressions": 6.38,
+          "min_detectable_ratio_at_50000_impressions": 2.7
+        },
+        "3.0": {
+          "impressions_per_arm_binomial": 39228,
+          "impressions_per_arm_adjusted": 39228,
+          "posts_per_arm_at_5000_median_impressions": 8,
+          "min_detectable_ratio_at_10000_impressions": 6.38,
+          "min_detectable_ratio_at_50000_impressions": 2.7
+        },
+        "4.0": {
+          "impressions_per_arm_binomial": 21791,
+          "impressions_per_arm_adjusted": 21791,
+          "posts_per_arm_at_5000_median_impressions": 5,
+          "min_detectable_ratio_at_10000_impressions": 6.38,
+          "min_detectable_ratio_at_50000_impressions": 2.7
+        }
+      }
+    },
+    {
+      "assumed_baseline_conversion": 0.0005,
+      "by_ratio": {
+        "1.5": {
+          "impressions_per_arm_binomial": 156879,
+          "impressions_per_arm_adjusted": 156879,
+          "posts_per_arm_at_5000_median_impressions": 32,
+          "min_detectable_ratio_at_10000_impressions": 3.72,
+          "min_detectable_ratio_at_50000_impressions": 1.96
+        },
+        "2.0": {
+          "impressions_per_arm_binomial": 47057,
+          "impressions_per_arm_adjusted": 47057,
+          "posts_per_arm_at_5000_median_impressions": 10,
+          "min_detectable_ratio_at_10000_impressions": 3.72,
+          "min_detectable_ratio_at_50000_impressions": 1.96
+        },
+        "3.0": {
+          "impressions_per_arm_binomial": 15681,
+          "impressions_per_arm_adjusted": 15681,
+          "posts_per_arm_at_5000_median_impressions": 4,
+          "min_detectable_ratio_at_10000_impressions": 3.72,
+          "min_detectable_ratio_at_50000_impressions": 1.96
+        },
+        "4.0": {
+          "impressions_per_arm_binomial": 8709,
+          "impressions_per_arm_adjusted": 8709,
+          "posts_per_arm_at_5000_median_impressions": 2,
+          "min_detectable_ratio_at_10000_impressions": 3.72,
+          "min_detectable_ratio_at_50000_impressions": 1.96
+        }
+      }
+    },
+    {
+      "assumed_baseline_conversion": 0.001,
+      "by_ratio": {
+        "1.5": {
+          "impressions_per_arm_binomial": 78390,
+          "impressions_per_arm_adjusted": 78390,
+          "posts_per_arm_at_5000_median_impressions": 16,
+          "min_detectable_ratio_at_10000_impressions": 2.7,
+          "min_detectable_ratio_at_50000_impressions": 1.64
+        },
+        "2.0": {
+          "impressions_per_arm_binomial": 23511,
+          "impressions_per_arm_adjusted": 23511,
+          "posts_per_arm_at_5000_median_impressions": 5,
+          "min_detectable_ratio_at_10000_impressions": 2.7,
+          "min_detectable_ratio_at_50000_impressions": 1.64
+        },
+        "3.0": {
+          "impressions_per_arm_binomial": 7833,
+          "impressions_per_arm_adjusted": 7833,
+          "posts_per_arm_at_5000_median_impressions": 2,
+          "min_detectable_ratio_at_10000_impressions": 2.7,
+          "min_detectable_ratio_at_50000_impressions": 1.64
+        },
+        "4.0": {
+          "impressions_per_arm_binomial": 4349,
+          "impressions_per_arm_adjusted": 4349,
+          "posts_per_arm_at_5000_median_impressions": 1,
+          "min_detectable_ratio_at_10000_impressions": 2.7,
+          "min_detectable_ratio_at_50000_impressions": 1.64
+        }
+      }
+    },
+    {
+      "assumed_baseline_conversion": 0.002,
+      "by_ratio": {
+        "1.5": {
+          "impressions_per_arm_binomial": 39146,
+          "impressions_per_arm_adjusted": 39146,
+          "posts_per_arm_at_5000_median_impressions": 8,
+          "min_detectable_ratio_at_10000_impressions": 2.1,
+          "min_detectable_ratio_at_50000_impressions": 1.44
+        },
+        "2.0": {
+          "impressions_per_arm_binomial": 11737,
+          "impressions_per_arm_adjusted": 11737,
+          "posts_per_arm_at_5000_median_impressions": 3,
+          "min_detectable_ratio_at_10000_impressions": 2.1,
+          "min_detectable_ratio_at_50000_impressions": 1.44
+        },
+        "3.0": {
+          "impressions_per_arm_binomial": 3908,
+          "impressions_per_arm_adjusted": 3908,
+          "posts_per_arm_at_5000_median_impressions": 1,
+          "min_detectable_ratio_at_10000_impressions": 2.1,
+          "min_detectable_ratio_at_50000_impressions": 1.44
+        },
+        "4.0": {
+          "impressions_per_arm_binomial": 2169,
+          "impressions_per_arm_adjusted": 2169,
+          "posts_per_arm_at_5000_median_impressions": 1,
+          "min_detectable_ratio_at_10000_impressions": 2.1,
+          "min_detectable_ratio_at_50000_impressions": 1.44
+        }
+      }
+    }
+  ],
+  "rules": [
+    "No format is killed on conversion until its arm has BOTH >=5 posts AND the impression floor for the effect size being claimed.",
+    "A difference is called real only when the two arms' impressions clear the floor for that ratio. Below the floor, report 'not distinguishable' and say so.",
+    "Until overdispersion is estimable (>=12 mature posts), every floor in this file is a lower bound and the true floor is larger.",
+    "Two consecutive weeks below the company median is necessary but not sufficient; the impression guard is also necessary."
+  ],
+  "honest_read": "Baseline is zero. No floor is measured, only modelled. The first two weekly readouts will be under-powered by construction and will say so."
+}

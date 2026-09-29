@@ -1,0 +1,10 @@
+format,description,armed,notes
+one-claim,Single assertion with a short proof or example.,yes,
+number,A post led by one figure.,yes,
+contrarian,Disagreement with the consensus read of a story.,yes,
+build-in-public,What we shipped, measured, or got wrong.,yes,
+thread,Ordered multi-post argument.,yes,
+chart,Prism-rendered image or diagram carrying the argument.,yes,
+quote-tweet,Commentary on someone else's post.,yes,
+reply,Standalone reply written to earn quote-tweets into another timeline.,yes,
+off-platform-pointer,Post whose job is to send readers to HN/Reddit/LinkedIn/newsletter.,yes,

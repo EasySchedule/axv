@@ -1,0 +1,28 @@
+{
+  "_note": "PRIOR parameters for the target model. These are beliefs, not measurements. The target_model.py re-estimates every one of them from the board's own data as soon as mature posts exist, and stamps provenance on the output. Never edit a number here to make a readout look better; the model overwrites them from data.",
+
+  "posts_per_day": 6.0,
+  "_posts_per_day_note": "The cadence the newsroom plans against. Matches config/account.json cadence_target_posts_per_day. This is a floor, not a goal: volume is the last lever.",
+
+  "conversion": 0.0005,
+  "_conversion_note": "Follows per impression. 0.05%. This is the same reference rate the noise floor uses, so the kill gate and the target model are calibrated against one number, not two.",
+
+  "discovery": 3000.0,
+  "_discovery_note": "Impressions per post that do NOT come from the follower base: algorithmic discovery, search, quote-tweet pickup, browse. For a new account this is the entire reach. Almost certainly wrong in both directions and replaced by measurement.",
+
+  "follower_share": 0.15,
+  "_follower_share_note": "Fraction of the follower base that sees one post, before algorithmic dilution.",
+
+  "reach_scale": 250000,
+  "_reach_scale_note": "The follower count at which the timeline throttles per-post reach by half. This term is what stops the model from compounding forever. It is the single most important unmeasured number in this file: it decides whether growth is exponential or linear, and therefore whether ANY cadence reaches 1M.",
+
+  "offplatform_cohort_per_week": 0,
+  "_offplatform_cohort_note": "Followers injected per week by off-platform distribution: Hacker News, Reddit, Discord, newsletter, large-account replies. Zero at baseline because no channel has run yet. The model solves for the value of this term that would close the gap; that solved value is the off-platform weekly target.",
+
+  "scenarios": {
+    "pessimistic": { "conversion": 0.0002, "discovery": 1500, "follower_share": 0.08, "reach_scale": 120000 },
+    "base":        { "conversion": 0.0005, "discovery": 3000, "follower_share": 0.15, "reach_scale": 250000 },
+    "strong":      { "conversion": 0.0010, "discovery": 6000, "follower_share": 0.25, "reach_scale": 500000 }
+  },
+  "_scenarios_note": "The bracket is not decoration. The base case is a belief; the spread is how much the answer moves when the belief is wrong. Any conclusion that flips across the bracket is not a conclusion, and the model says so."
+}

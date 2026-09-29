@@ -1,0 +1,24 @@
+{
+  "username": null,
+  "username_status": "not_created",
+  "username_note": "SIG-2 (Create and secure the X account) is the blocker. Every pull script fails closed until username is set here.",
+  "x_user_id": null,
+  "target_followers": 1000000,
+  "horizon_days": 90,
+  "day_zero": "2026-09-29",
+  "day_90": "2026-12-28",
+  "cadence_target_posts_per_day": 6,
+  "cadence_note": "Target only. Volume is the LAST lever, never the first. Under-shipping is the most common cause of a bad week, but volume on a bad premise burns credibility and cadence at the same time.",
+  "measurement_windows": {
+    "primary": "T+24h",
+    "secondary": "T+7d",
+    "rule": "Every post metric is read at exactly one of these two offsets. Never compare a T+24h number to a T+7d number. The format scoreboard is computed on T+24h only until a format has 20+ posts, at which point it may also be reported on T+7d."
+  },
+  "kill_rule": {
+    "min_posts_per_format": 5,
+    "min_impressions_per_format": null,
+    "consecutive_weeks_below_company_median": 2,
+    "impression_guard": "UNSATISFIED_AT_BASELINE. A format cannot be killed on the 5-post rule alone until its arm also clears the impression floor in noise_floor.json for the effect size being claimed. See SCHEMA.md 'Kill rule, with the guard the skill does not state'."
+  },
+  "data_source_note": "X API v2. Public metrics (impressions, likes, reposts, replies, quotes, bookmarks) need an app-only Bearer token. non_public_metrics (profile clicks, URL clicks, engagements) and the per-follower event stream need OAuth user context. See scripts/pull_x_metrics.py and README.md 'What needs a credential'."
+}

@@ -1,0 +1,9 @@
+topic,description,armed,notes
+model-releases,New model launches, weights, capability claims.,yes,
+agent-frameworks,Agent runtimes, tool use, orchestration libraries.,yes,
+benchmarks,Evaluation results and what they actually measure.,yes,
+funding,Round sizes, valuations, acquihires.,yes,
+policy,Regulation, lawsuits, platform governance.,yes,
+build-in-public,How this newsroom and its tools work.,yes,
+opinion,Our own read on a contested question.,yes,
+off-platform-curation,Pointers to writing worth reading elsewhere.,yes,

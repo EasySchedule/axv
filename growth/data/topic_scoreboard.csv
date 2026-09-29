@@ -1,0 +1,9 @@
+topic,posts_shipped,median_impressions_24h,p25_impressions_24h,p75_impressions_24h,max_impressions_24h,median_engagement_rate_24h,median_follower_conversion_24h,median_net_new_24h,total_impressions_24h,total_net_new_24h,weighted_conversion_24h,company_median_conversion_24h,vs_company_median,kill_eligible,week_of
+model-releases,0,,,,,,,,0,0,,,,no,2026-W40
+agent-frameworks,0,,,,,,,,0,0,,,,no,2026-W40
+benchmarks,0,,,,,,,,0,0,,,,no,2026-W40
+funding,0,,,,,,,,0,0,,,,no,2026-W40
+policy,0,,,,,,,,0,0,,,,no,2026-W40
+build-in-public,0,,,,,,,,0,0,,,,no,2026-W40
+opinion,0,,,,,,,,0,0,,,,no,2026-W40
+off-platform-curation,0,,,,,,,,0,0,,,,no,2026-W40
