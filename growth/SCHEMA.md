@@ -57,6 +57,24 @@ So: **5 posts is a floor on sample count, not a licence to conclude.** Below the
 impression floor, the correct output is "not distinguishable," and that is what
 `kill_gate.py` writes.
 
+### The column-name bug that made the gate dead code
+
+`kill_gate.py` originally looked up `vs_company_median_24h`. `scoreboard.py` writes
+`vs_company_median`, unsuffixed — it is a verdict on the whole arm, not a measurement
+at one window. The lookup returned an empty string for every arm, "below the company
+median" was therefore never true, and the gate returned `no` for everything
+unconditionally. It printed confident verdicts, and the impression guard I had added
+was never the binding condition because the gate short-circuited before reaching it.
+
+Nothing in the original test suite caught it, because the original suite asserted the
+gate *blocked* things and a gate that blocks everything passes that test. The fix
+required asserting the opposite: that a fully-evidenced weak arm **clears**. Both
+directions are now in `selftest.py`, and the test also asserts the column name itself
+so a rename cannot silently reintroduce this.
+
+Lesson worth carrying: a guard test that only checks the guard holds is a test of the
+guard's existence, not its behaviour.
+
 The two-week condition is checked against `data/history/`, which holds one scoreboard
 snapshot per week. Empty history means the condition is unproven and the gate says so.
 

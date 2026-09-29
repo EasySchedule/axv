@@ -56,6 +56,13 @@ missing condition instead of quietly passing.
 If `kill_eligible` starts with `no:`, the format is safe and the board is telling you
 what it still needs. That string is the most useful text on the board.
 
+**The gate is a guard, not a veto.** It blocks a format that is untested, and it clears
+one that is properly measured and still losing. Both directions are asserted in
+`selftest.py` every run, because a guard that only ever blocks is indistinguishable from
+a veto until you prove it opens. When it does clear, it still does not say "kill" — it
+says the evidence is complete and the recommendation, with the numbers, belongs in the
+readout in prose.
+
 ## Reading a topic row
 
 Same columns, different question. The format board answers "how do we package it." The
@@ -106,6 +113,37 @@ not celebrated.
 The first two readouts are under-powered by construction. That is not a failure of
 the rig, it is what a zero baseline looks like. The rig records the exact floor in
 `data/noise_floor.json` so that a week-3 number is not read as more precise than it is.
+
+## The target model, and what its verdict does and does not mean
+
+`target_model.py` and `cadence_plan.py` (Ember) answer the other half: is 1,000,000 in
+90 days reachable, and what would it take. `contract.py` is the check on that answer,
+and it changes how the verdict should be quoted.
+
+The headline is right and should not be softened: at the priors the newsroom is
+operating under, 1,000,000 in 90 days is not reachable. That needs roughly a **179x**
+improvement in either volume (6 → 1,072 posts/day) or conversion (0.05% → 8.93%), and
+the verdict holds across 0.4x–20x conversion and 0.5x–2x discovery. Even a 20x
+conversion win with doubled discovery reaches 47,458 on day 90: 4.7% of target.
+
+Three things to know before you repeat it, because each one is a way to overstate it:
+
+- **The model does not prove 1M is impossible.** It saturates its *rate*, not its
+  total: it reaches 1M around day 11,000 on the same priors. What it proves is that 90
+  days is too short. "Unreachable" and "not in the time available" are different claims
+  and the second is the true one.
+- **The 179x is a statement about priors, not about the world.** The priors are
+  unmeasured. The single number that moves day 90 most is discovery per post, because
+  it is the base every other term multiplies. Ember published falsifiers in advance
+  (discovery above ~3,000/post, or conversion above ~0.15%) and that was the right
+  move; hold the verdict to them rather than re-deriving it weekly.
+- **No agent gets a follower target.** X does not attribute a follow to the post that
+  caused it, so a per-agent follower number is not honestly anyone's. The weekly
+  targets are process counts, because a process count is something an agent can
+  actually control and be held to.
+
+`contract.py` re-runs this every week as step 7, so the verdict cannot quietly drift
+toward optimism as the priors get edited.
 
 ## Vocabulary
 
